@@ -126,8 +126,8 @@ def get_fert(totpers, min_yr, max_yr, graph=False):
     --------------------------------------------------------------------
     '''
     # Get current population data (2013) for weighting
-    #cur_path = os.path.abspath("")
-    cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
+    cur_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'ogusa'))
+    #cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
     pop_filename = cur_path + "/data/demographic/Population.csv"
     #pop_file = read_file(cur_path, "data/demographic/Population.csv")
     pop_data = pd.read_csv(pop_filename, sep='\s+', usecols=["Year", "Age", "Total"])
@@ -346,8 +346,8 @@ def get_mort(totpers, min_yr, max_yr, graph=False):
     # Get mortality rate by age data
     infmort_rate = 0#1.9 / 1000  # https://knoema.com/atlas/Japan/Infant-mortality-rate
 
-    #cur_path = os.path.abspath("")
-    cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
+    cur_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'ogusa'))
+    #cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
     mort_filename = cur_path + "/data/demographic/Mortality.csv"
 
     mort = pd.read_csv(mort_filename, sep="\s+", usecols=["Year", "Age", "Total"])
@@ -813,8 +813,8 @@ def get_imm_resid(totpers, min_yr, max_yr, graph=True):
     RETURNS: imm_rates
     --------------------------------------------------------------------
     '''
-    #cur_path = os.path.abspath("")
-    cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
+    cur_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'ogusa'))
+    #cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
     #cur_path = "/Volumes/GoogleDrive/My Drive/3rd Year/Quarter 2/Structural Estimation/MACS-Project"
     pop_filename = cur_path + "/data/demographic/Population.csv"
 
@@ -1086,8 +1086,9 @@ def get_pop_objs(E, S, T, min_yr, max_yr, curr_year, GraphDiag=True):
     #pop_file = read_file(cur_path,
     #                           "data/demographic/pop_data.csv")
     #pop_data = pd.read_csv(pop_file, sep=',', thousands=',')
-    cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
+    #cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
     #cur_path = "/Volumes/GoogleDrive/My Drive/3rd Year/Quarter 2/Structural Estimation/MACS-Project"
+    cur_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'ogusa'))
     pop_filename = cur_path + "/data/demographic/Population.csv"
 
     pop_data = pd.read_csv(pop_filename, sep="\s+", usecols=["Year", "Age", "Total"])
@@ -1206,7 +1207,8 @@ def get_pop_objs(E, S, T, min_yr, max_yr, curr_year, GraphDiag=True):
         output_path = string, path of file name of figure to be saved
         ----------------------------------------------------------------
         '''
-        cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
+        #cur_path = "/Users/keiirizawa/Desktop/OG-USA/ogusa"
+        cur_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'ogusa'))
         output_fldr = "OUTPUT/Demographics"
         output_dir = os.path.join(cur_path, output_fldr)
         if os.access(output_dir, os.F_OK) is False:
