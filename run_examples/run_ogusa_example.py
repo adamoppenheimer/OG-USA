@@ -5,8 +5,13 @@ from dask.distributed import Client
 import time
 import numpy as np
 
-from taxcalc import Calculator
+import os,sys,inspect
+sys.path.insert(1, sys.path[0])
+print(sys.path[1])
+
 from ogusa import postprocess
+from taxcalc import Calculator
+
 from ogusa.execute import runner
 from ogusa.utils import REFORM_DIR, BASELINE_DIR
 
