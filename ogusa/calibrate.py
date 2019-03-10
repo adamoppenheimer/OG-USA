@@ -161,10 +161,10 @@ def chi_estimate(p, client=None):
     chi_n[:p.S // 2] = chebyshev_func(ages, a0, a1, a2, a3, a4)
     chi_n[p.S // 2:] = sixty_plus_chi
     p.chi_n = chi_n
+    pickle.dump(chi_n, open("chi_n.p", "wb"))
 
     ss_output = SS.run_SS(p)
     return ss_output
-
 
 
 def minstat(params, *args):
